@@ -93,6 +93,7 @@ export default function Projects() {
           image3={cameraapp3}
           logo={mydriverappLogo}
           technologies={[python]}
+          projSc={"https://github.com/N-Leonnardo/cameraapp"}
           classes={"flex-row-reverse"}
         />
       </div>

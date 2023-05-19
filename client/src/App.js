@@ -77,7 +77,7 @@ function ErrorPage() {
 function HomePage() {
   return (
     <div>
-      <Alert />
+      {/* <Alert /> */}
       <Suspense fallback={<Loading />}>
         <Fullpage>
           <FullpageNavigation style={{ zIndex: "100" }} />

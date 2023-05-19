@@ -15,7 +15,7 @@ export default function HeroSection() {
         }}
       >
         <div className="bg-blue-500 w-32 h-2 text-right"></div>
-        <h1 className="font-bold text-right text-7xl">
+        <h1 className="font-bold text-right text-5xl md:text-6xl lg:text-7xl">
           WELCOME <br /> TO MY <br /> WORLD
         </h1>
         <div className="links flex items-center justify-evenly w-28">

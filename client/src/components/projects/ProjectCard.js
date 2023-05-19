@@ -49,17 +49,19 @@ export default function ProjectCard(props) {
                 />
                 Source Code
               </a>
-              <a
-                href={props.projLive}
-                target="_blank"
-                className="flex items-center cursor-pointer text-neutral"
-              >
-                <HiOutlineStatusOnline
-                  className="mx-2 text-neutral"
-                  style={{ fontSize: "32px" }}
-                />
-                See it live
-              </a>
+              {props.projLive && (
+                <a
+                  href={props.projLive}
+                  target="_blank"
+                  className="flex items-center cursor-pointer text-neutral"
+                >
+                  <HiOutlineStatusOnline
+                    className="mx-2 text-neutral"
+                    style={{ fontSize: "32px" }}
+                  />
+                  See it live
+                </a>
+              )}
             </div>
           </div>
         </div>
