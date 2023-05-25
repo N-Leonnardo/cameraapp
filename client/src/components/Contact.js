@@ -10,17 +10,18 @@ export default function Contact() {
   const [modal, setModal] = useState(false);
 
   function handleSubmit() {
+    alert("I am sorry, we are still working on it.");
     if (from && subject && text && client) {
-      axios
-        .post(`https://connection.helpinglocal.org/api/SendEmail`, {
-          from: from,
-          to: "leonnardoenriquesn@gmail.com",
-          subject: client + " " + subject,
-          text: text,
-        })
-        .then(() => {
-          alert("Sent");
-        });
+      //   axios
+      //     .post(`https://connection.helpinglocal.org/api/SendEmail`, {
+      //       from: from,
+      //       to: "leonnardoenriquesn@gmail.com",
+      //       subject: client + " " + subject,
+      //       text: text,
+      //     })
+      //     .then(() => {
+      //       alert("Sent");
+      //     });
     }
   }
 

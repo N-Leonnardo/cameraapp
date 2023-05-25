@@ -1,11 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Canvas } from "@react-three/fiber";
-import Box from "./components/3d/Box";
-import { Environment, OrbitControls } from "@react-three/drei";
-import { Model } from "./components/3d/Setup";
-import Navbar from "./components/Navbar";
-import My3D from "./components/3d/My3D";
 import HeroSection from "./components/HeroSection";
 import About from "./components/About";
 import {
@@ -15,13 +8,11 @@ import {
   FullPageSections,
 } from "@ap.cx/react-fullpage";
 import Projects from "./components/Projects";
-import Alert from "./components/Alert";
 import { Suspense, useEffect } from "react";
 import { useState } from "react";
 import Contact from "./components/Contact";
-import { motion } from "framer-motion";
 import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
-import axios from "axios";
+import Alert from "./components/Alert";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -65,7 +56,7 @@ function ErrorPage() {
 function HomePage() {
   return (
     <div>
-      {/* <Alert /> */}
+      <Alert />
       <Suspense fallback={<Loading />}>
         <Fullpage>
           <FullpageNavigation style={{ zIndex: "100" }} />

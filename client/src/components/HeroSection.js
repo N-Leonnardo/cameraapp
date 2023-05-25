@@ -31,7 +31,9 @@ export default function HeroSection() {
         </div>
       </div>
       <Navbar />
-      <My3D lights={lights} />
+      <a href="">
+        <My3D lights={lights} />
+      </a>
     </div>
   );
 }
