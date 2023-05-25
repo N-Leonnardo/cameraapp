@@ -21,7 +21,6 @@ export default function ProjectCard(props) {
 
               <div className="tech-icons text-neutral flex my-2 ">
                 {props.technologies?.map((tech) => {
-                  console.log(tech);
                   return <img src={tech} alt="" className="w-8 mx-2" />;
                 })}
               </div>

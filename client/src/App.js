@@ -28,18 +28,6 @@ function App() {
 
   useEffect(() => {
     document.title = "LeoNascimento.dev | Portfolio";
-    axios.get("https://api.ipify.org/?format=json").then((response) => {
-      axios
-        .post(`https://connection.helpinglocal.org/api/SendEmail`, {
-          from: "leo@leonascimento.dev",
-          to: "leo@leonascimento.dev",
-          subject: "New access to your website",
-          text: `Someone accessed your website, IP: ${response.data.ip}`,
-        })
-        .then((res) => {
-          console.log(res);
-        });
-    });
   }, []);
 
   return (
