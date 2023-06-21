@@ -72,7 +72,9 @@ export default function About() {
               </a>
             </div>
             <h2 className="card-title">About me</h2>
-            <p>{aboutText}</p>
+            <div className="overflow-scroll text-resizer-mobile">
+              <p className="">{aboutText}</p>
+            </div>
             <div className="card-actions justify-end"></div>
           </div>
         </div>

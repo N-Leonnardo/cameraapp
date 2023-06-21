@@ -38,7 +38,13 @@
 }
 
 .bg-default {
-  background: hsla(221, 100%, 94%, 1);
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=e4efe0&c2=76ffef&gt=r&gd=dtl
+*/
+  background: #e4efe0;
+  background: radial-gradient(at left top, #e4efe0, #76ffef);
+  /* background: hsla(221, 100%, 94%, 1);
 
   background: linear-gradient(
     90deg,
@@ -102,5 +108,8 @@
     justify-content: center;
     left: 0px !important;
     top: 40vh !important;
+  }
+  .text-resizer-mobile {
+    height: 80px;
   }
 }

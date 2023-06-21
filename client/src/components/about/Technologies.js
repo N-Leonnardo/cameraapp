@@ -11,7 +11,7 @@ import {
 
 export default function Technologies() {
   return (
-    <div className="my-2">
+    <div className="my-2 max-w-full mx-4">
       <h2 className="text-2xl text-center">What I am used to work with</h2>
       <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-base-100 rounded-box mx-auto my-2 w-96">
         <div

@@ -4,8 +4,8 @@ import My3D from "./3d/My3D";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import Navbar from "./Navbar";
+import Box from "./3d/Box";
 export default function HeroSection() {
-  const [lights, setLights] = useState(false);
   return (
     <div>
       <div
@@ -32,7 +32,7 @@ export default function HeroSection() {
       </div>
       <Navbar />
       <a href="">
-        <My3D lights={lights} />
+        <My3D />
       </a>
     </div>
   );

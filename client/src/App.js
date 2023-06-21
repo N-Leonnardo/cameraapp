@@ -13,6 +13,8 @@ import { useState } from "react";
 import Contact from "./components/Contact";
 import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
 import Alert from "./components/Alert";
+import Ballon from "./components/3d/Ballon";
+import { Projectsv2 } from "./components/Projectsv2";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -56,12 +58,13 @@ function ErrorPage() {
 function HomePage() {
   return (
     <div>
-      <Alert />
       <Suspense fallback={<Loading />}>
+        <Alert />
         <Fullpage>
           <FullpageNavigation style={{ zIndex: "100" }} />
           <FullPageSections>
             <FullpageSection id="Home">
+              <Ballon />
               <HeroSection />
             </FullpageSection>
             <FullpageSection>
@@ -69,6 +72,7 @@ function HomePage() {
             </FullpageSection>
             <FullpageSection>
               <Projects />
+              {/* <Projectsv2 /> */}
             </FullpageSection>
             <FullpageSection>
               <Contact />

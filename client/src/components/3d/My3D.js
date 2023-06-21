@@ -4,10 +4,9 @@ import { Environment, OrbitControls } from "@react-three/drei";
 import { Model } from "./Macbook";
 import { useState } from "react";
 import { easing } from "maath";
+import Ballon from "./Ballon";
 
 export default function My3D() {
-  const [lights, setLights] = useState(true);
-
   function Rig() {
     return useFrame((state, delta) => {
       easing.damp3(
@@ -26,15 +25,13 @@ export default function My3D() {
           height: "100vh",
         }}
       >
-        {lights && (
-          <>
-            <OrbitControls enableZoom={false} />
-            <Environment preset="forest" blur={100} />
-            <shadowMaterial transparent opacity={0.2} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[-4, 5, 3]} intensity={1} />
-          </>
-        )}
+        <>
+          <OrbitControls enableZoom={false} />
+          {/* <Environment preset="forest" blur={100} /> */}
+          <shadowMaterial transparent opacity={0.2} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[-4, 5, 3]} intensity={1} />
+        </>
         <Model />
         <Rig />
       </Canvas>

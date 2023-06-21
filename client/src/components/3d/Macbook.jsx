@@ -29,10 +29,6 @@ export function Model(props) {
   }, []);
 
   useFrame(() => {
-    // if (windowSize.current[0] < 900) {
-    //   setPos([-1, 0, -6]);
-    //   setRot([0, 0, 0]);
-    // }
     if (screenStart > -1.75) {
       screenStart -= 0.01;
       myGroup.current.rotation.x = screenStart;
