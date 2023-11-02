@@ -71,8 +71,8 @@ function HomePage() {
               <About />
             </FullpageSection>
             <FullpageSection>
-              <Projects />
-              {/* <Projectsv2 /> */}
+              {/* <Projects /> */}
+              <Projectsv2 />
             </FullpageSection>
             <FullpageSection>
               <Contact />
