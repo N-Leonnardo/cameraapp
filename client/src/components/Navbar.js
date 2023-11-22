@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import ReactFullpage from "@ap.cx/react-fullpage";
+import ReactFullpage, { FullpageContext } from "@ap.cx/react-fullpage";
 
 export default function Navbar() {
   const fullpageApi = useRef(null);
@@ -19,33 +19,36 @@ export default function Navbar() {
         <button className="btn btn-outline border-none">
           <a>HOME</a>
         </button>
-        <button className="btn btn-outline border-none">
-          <a
-            onClick={() => {
-              scrollToSection(2);
-            }}
-          >
-            ABOUT ME
-          </a>
-        </button>
-        <button className="btn btn-outline border-none">
-          <a
-            onClick={() => {
-              scrollToSection(3);
-            }}
-          >
-            PROJECTS
-          </a>
-        </button>
-        <button className="btn btn-outline border-none">
-          <a
-            onClick={() => {
-              scrollToSection(4);
-            }}
-          >
-            CONTACT
-          </a>
-        </button>
+        <FullpageContext.Consumer>
+          {(ctx) => (
+            <button
+              className="btn btn-outline border-none"
+              onClick={() => ctx.goto(ctx.slides[1], true)}
+            >
+              ABOUT ME
+            </button>
+          )}
+        </FullpageContext.Consumer>
+        <FullpageContext.Consumer>
+          {(ctx) => (
+            <button
+              className="btn btn-outline border-none"
+              onClick={() => ctx.goto(ctx.slides[2], true)}
+            >
+              PROJECTS
+            </button>
+          )}
+        </FullpageContext.Consumer>
+        <FullpageContext.Consumer>
+          {(ctx) => (
+            <button
+              className="btn btn-outline border-none"
+              onClick={() => ctx.goto(ctx.slides[3], true)}
+            >
+              CONTACT
+            </button>
+          )}
+        </FullpageContext.Consumer>
       </div>
     </div>
   );
