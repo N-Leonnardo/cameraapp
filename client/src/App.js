@@ -1,14 +1,16 @@
 import "./App.css";
 import HeroSection from "./components/HeroSection";
 import About from "./components/About";
-import {
-  Fullpage,
-  FullpageNavigation,
-  FullpageSection,
+import Fullpage, {
   FullPageSections,
+  FullpageSection,
+  FullpageCount,
+  FullpageNavigation,
+  FullpageContext,
 } from "@ap.cx/react-fullpage";
+import logo from "./logo.svg";
 import Projects from "./components/Projects";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useState } from "react";
 import Contact from "./components/Contact";
 import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
@@ -56,30 +58,34 @@ function ErrorPage() {
 }
 
 function HomePage() {
+  const fullpageRef = useRef(null);
+
+  function scrollToSlide(index) {
+    fullpageRef.current.moveTo(index);
+  }
+
   return (
     <div>
-      <Suspense fallback={<Loading />}>
-        <Alert />
-        <Fullpage>
-          <FullpageNavigation style={{ zIndex: "100" }} />
-          <FullPageSections>
-            <FullpageSection id="Home">
-              <Ballon />
-              <HeroSection />
-            </FullpageSection>
-            <FullpageSection>
-              <About />
-            </FullpageSection>
-            <FullpageSection>
-              {/* <Projects /> */}
-              <Projectsv2 />
-            </FullpageSection>
-            <FullpageSection>
-              <Contact />
-            </FullpageSection>
-          </FullPageSections>
-        </Fullpage>
-      </Suspense>
+      <Alert />
+      <Fullpage ref={fullpageRef}>
+        <FullpageNavigation style={{ zIndex: "100" }} />
+        <FullPageSections>
+          <FullpageSection id="Home">
+            <Ballon />
+            <HeroSection />
+          </FullpageSection>
+          <FullpageSection>
+            <About />
+          </FullpageSection>
+          <FullpageSection>
+            {/* <Projects /> */}
+            <Projectsv2 />
+          </FullpageSection>
+          <FullpageSection>
+            <Contact />
+          </FullpageSection>
+        </FullPageSections>
+      </Fullpage>
     </div>
   );
 }
